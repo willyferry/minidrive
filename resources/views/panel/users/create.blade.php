@@ -49,7 +49,7 @@
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
                                             <label for="role">Role</label>
-                                            <select class="form-select" id="role" name="role" required value="{{ old('name') }}">
+                                            <select class="form-select" id="role" name="role" required>
                                                 <option value="">Select Role</option>
                                                 <option value="admin" {{ old('role') === 'admin' ? 'selected' : '' }}>Admin</option>
                                                 <option value="user" {{ old('role') === 'user' ? 'selected' : '' }}>User</option>
