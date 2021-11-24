@@ -4,6 +4,11 @@
     <div class="page-heading">
         <h3>Horizontal Layout</h3>
     </div>
+
+    <div class="my-4">
+        @include('layouts.partials.alerts')
+    </div>
+
     <div class="page-content">
         <section class="row">
             <div class="col-12 col-lg-9">

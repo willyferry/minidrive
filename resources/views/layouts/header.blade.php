@@ -18,35 +18,35 @@
             <ul>
                 @auth
                     <li class="menu-item">
-                        <a href="index.html" class='menu-link' style="text-decoration:none">
+                        <a href="{{ route('dashboard') }}" class='menu-link' style="text-decoration:none">
                             <i class="bi bi-grid-fill"></i>
                             <span>Dashboard</span>
                         </a>
                     </li>
                     @if (Auth::user()->is_admin === 1)
                         <li class="menu-item">
-                            <a href="index.html" class='menu-link' style="text-decoration:none">
-                                <i class="bi bi-grid-fill"></i>
+                            <a href="{{ route('files.index') }}" class='menu-link' style="text-decoration:none">
+                                <i class="fas fa-file"></i>
                                 <span>All Files</span>
                             </a>
                         </li>
                         <li class="menu-item">
-                            <a href="index.html" class='menu-link' style="text-decoration:none">
-                                <i class="bi bi-grid-fill"></i>
+                            <a href="{{ route('users.index') }}" class='menu-link' style="text-decoration:none">
+                                <i class="fas fa-users"></i>
                                 <span>All Users</span>
                             </a>
                         </li>
                     @endif
                     <li class="menu-item">
-                        <a href="index.html" class='menu-link' style="text-decoration:none">
-                            <i class="bi bi-grid-fill"></i>
+                        <a href="{{ route('my-files.index') }}" class='menu-link' style="text-decoration:none">
+                            <i class="fas fa-archive"></i>
                             <span>My Files</span>
                         </a>
                     </li>
                     <li class="menu-item">
-                        <a href="index.html" class='menu-link' style="text-decoration:none">
-                            <i class="bi bi-grid-fill"></i>
-                            <span>Settings</span>
+                        <a href="{{ route('account-setting.index') }}" class='menu-link' style="text-decoration:none">
+                            <i class="fas fa-cogs"></i>
+                            <span>Account Setting</span>
                         </a>
                     </li>
 
@@ -55,7 +55,7 @@
                             @csrf
                         </form>
                         <a class='menu-link' onclick="document.getElementById('logout').submit()" style="text-decoration:none;cursor: pointer">
-                            <i class="bi bi-grid-fill"></i>
+                            <i class="fas fa-sign-out-alt"></i>
                             <span>Logout</span>
                         </a>
                     </li>

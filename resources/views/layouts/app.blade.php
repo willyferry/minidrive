@@ -8,7 +8,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="{{ asset('/vendors/iconly/bold.css') }}">
 
-    <link rel="stylesheet" href="{{ asset('/vendors/perfect-scrollbar/perfect-scrollbar.css') }}">
     <link rel="shortcut icon" href="{{ asset('/images/favicon.svg') }}" type="image/x-icon">
 
     <!-- CSRF Token -->
@@ -24,8 +23,11 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('/css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ asset('/vendors/perfect-scrollbar/perfect-scrollbar.css') }}">
     <link rel="stylesheet" href="{{ asset('/vendors/bootstrap-icons/bootstrap-icons.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/pages/auth.css') }}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    @stack('styles')
 </head>
 
 <body>
@@ -61,6 +63,7 @@
     <script src="{{ asset('/js/pages/dashboard.js') }}"></script>
 
     <script src="{{ asset('/js/pages/horizontal-layout.js') }}"></script>
-</body>
 
+    @stack('scripts')
+</body>
 </html>

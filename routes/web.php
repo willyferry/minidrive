@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AccountSettingController;
 use App\Http\Controllers\Admin\FileController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MyFileController;
 use Illuminate\Support\Facades\Route;
@@ -25,7 +26,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     Route::middleware('isAdmin')->group(function () {
-        Route::resource('users', UserController::class);
+        Route::resource('users', UserController::class)->except(['show']);
         Route::resource('files', FileController::class);
     });
 
