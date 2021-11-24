@@ -33,7 +33,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('/my-files', MyFileController::class);
 
     Route::get('/account-setting', [AccountSettingController::class, 'index'])->name('account-setting.index');
-    Route::post('/account-setting', [AccountSettingController::class, 'update'])->name('account-setting.update');
+    Route::put('/account-setting', [AccountSettingController::class, 'update'])->name('account-setting.update');
 });
 
 Auth::routes();
