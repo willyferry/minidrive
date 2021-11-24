@@ -6,8 +6,8 @@
 
 @section('content')
     <div class="page-heading">
-        <h3>My Files</h3>
-        <p class="text-subtitle text-muted">All of my files</p>
+        <h3>All Files</h3>
+        <p class="text-subtitle text-muted">All of site files</p>
     </div>
 
     <div class="my-4">
@@ -17,44 +17,39 @@
     <div class="page-content">
         <section class="section">
             <div class="card">
-                <div class="card-header">
-                    <a href="{{ route('my-files.create') }}" class="btn btn-primary btn-sm">
-                        <i class="fa fa-plus"></i> Add New
-                    </a>
-                </div>
                 <div class="card-body">
                     <table class="table table-striped" id="table1">
                         <thead>
                             <tr>
                                 <th>
                                     Name <br/>
-                                    <small class="text-muted" style="font-size:11px">Public or Private</small>
+                                    <small class="text-muted" style="font-size:11px">Author</small>
                                 </th>
-                                <th>Password</th>
+                                <th>Detail</th>
                                 <th>Upload Date</th>
                                 <th class="text-end">Action</th>
                             </tr>
                         </thead>
                         <tbody class="text-dark">
-                            @if ($myFiles->isEmpty())
+                            @if ($files->isEmpty())
                                 <tr>
                                     <td colspan="4" class="text-center">No data available</td>
                                 </tr>
                             @else
-                                @foreach ($myFiles as $myFile)
+                                @foreach ($files as $file)
                                     <tr>
                                         <td>
-                                            {{ $myFile->name }} <br/>
-                                            <small class="text-muted" style="font-size:11px">{{ $myFile->is_public === 1 ? 'Public' : 'Private' }}</small>
+                                            {{ $file->name }} <br/>
+                                            <small class="text-muted" style="font-size:11px">{{ $file->user->name }}</small>
                                         </td>
                                         <td>
-                                            {{ @$myFile->password ?: '-' }}
+                                            Password: {{ @$file->password ?: '-' }} <br/>
+                                            <small class="text-muted" style="font-size:11px">{{ $file->is_public ? 'Public' : 'Private' }}</small>
                                         </td>
                                         <td>{{ $file->created_at->format('d M Y H:i') }}</td>
                                         <td class="text-end">
-                                            <a href="{{ route('my-files.edit', $myFile->id) }}" class="btn btn-sm btn-primary">Edit</a>
                                             <a href="" class="btn btn-sm btn-info">View</a>
-                                            <a onclick="confirmDelete('{{ route('my-files.destroy', $myFile->id) }}')" class="btn btn-sm btn-danger">Delete</a>
+                                            <a onclick="confirmDelete('{{ route('files.destroy', $file->id) }}')" class="btn btn-sm btn-danger">Delete</a>
                                         </td>
                                     </tr>
                                 @endforeach

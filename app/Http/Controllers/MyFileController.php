@@ -16,7 +16,7 @@ class MyFileController extends Controller
      */
     public function index()
     {
-        $myFiles = File::where('user_id', auth()->user()->id)->get();
+        $myFiles = File::where('user_id', auth()->user()->id)->orderBy('id', 'desc')->get();
         return view('panel.my-files.index', compact('myFiles'));
     }
 
