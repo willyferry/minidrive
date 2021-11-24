@@ -52,10 +52,9 @@
                                         <td>
                                             {{ @$myFile->password ?: '-' }}
                                         </td>
-                                        <td>{{ $file->created_at->format('d M Y H:i') }}</td>
+                                        <td>{{ $myFile->created_at->format('d M Y H:i') }}</td>
                                         <td class="text-end">
                                             <a href="{{ route('my-files.edit', $myFile->id) }}" class="btn btn-sm btn-primary">Edit</a>
-                                            <a href="" class="btn btn-sm btn-info">View</a>
                                             <a onclick="confirmDelete('{{ route('my-files.destroy', $myFile->id) }}')" class="btn btn-sm btn-danger">Delete</a>
                                         </td>
                                     </tr>

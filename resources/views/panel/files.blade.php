@@ -50,7 +50,6 @@
                                         </td>
                                         <td>{{ $file->created_at->format('d M Y H:i') }}</td>
                                         <td class="text-end">
-                                            <a href="" class="btn btn-sm btn-info">View</a>
                                             <a onclick="confirmDelete('{{ route('files.destroy', $file->id) }}')" class="btn btn-sm btn-danger">Delete</a>
                                         </td>
                                     </tr>

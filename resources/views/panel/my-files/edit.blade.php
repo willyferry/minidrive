@@ -67,7 +67,7 @@
                                     <div class="col-12">
                                         <div class="form-group">
                                             <label for="password">Password</label>
-                                            <input type="text" id="password" class="form-control"
+                                            <input type="text" id="password" class="form-control" value="{{ $myFile->password }}"
                                                 name="password" placeholder="Password">
                                             <small class="form-text text-muted">Leave blank if you don't want to set password</small>
                                         </div>

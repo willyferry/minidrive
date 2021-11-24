@@ -113,9 +113,9 @@ class UserController extends Controller
     {
         $user = User::where('id', $id)->firstOrFail();
 
-        // foreach ($user->files as $file) {
-        //     // Storage::delete()
-        // }
+        foreach ($user->files as $file) {
+            Storage::disk('public')->delete('files/' . $file->file_url);
+        }
 
         $user->delete();
 

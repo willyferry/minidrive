@@ -46,7 +46,7 @@ class MyFileController extends Controller
         ]);
 
         $file_url = Str::random(40) . '.' . $request->file->getClientOriginalExtension();
-        $request->file->storeAs('files', $file_url);
+        $request->file->storeAs('files', $file_url, 'public');
 
         File::create([
             'name' => $request->name,
@@ -93,9 +93,9 @@ class MyFileController extends Controller
         $file_url = $myFile->file_url;
 
         if ($request->hasFile('file')) {
-            Storage::delete('files/' . $myFile->file_url);
+            Storage::disk('public')->delete('files/' . $myFile->file_url);
             $file_url = Str::random(40) . '.' . $request->file->getClientOriginalExtension();
-            $request->file->storeAs('files', $file_url);
+            $request->file->storeAs('files', $file_url, 'public');
         }
 
         $myFile->update([
@@ -120,7 +120,7 @@ class MyFileController extends Controller
     public function destroy($id)
     {
         $myFile = File::where('user_id', auth()->user()->id)->where('id', $id)->firstOrFail();
-        Storage::delete('files/' . $myFile->file_url);
+        Storage::disk('public')->delete('files/' . $myFile->file_url);
         $myFile->delete();
 
         return redirect()->back()->with('success', 'File deleted successfully');

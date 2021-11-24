@@ -4,6 +4,7 @@ use App\Http\Controllers\AccountSettingController;
 use App\Http\Controllers\Admin\FileController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\IndexController;
 use App\Http\Controllers\MyFileController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,9 +19,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
+Route::get('/', [IndexController::class, 'index'])->name('welcome');
+Route::post('/file/{id}/confirm-password', [IndexController::class, 'downloadFileConfirmPassword'])->name('file.confirmPassword');
 
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
