@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Edit user')
+
 @push('styles')
 @endpush
 

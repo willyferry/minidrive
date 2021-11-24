@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Files')
+
 @push('styles')
     <link rel="stylesheet" href="{{ asset('/vendors/simple-datatables/style.css') }}">
 @endpush
