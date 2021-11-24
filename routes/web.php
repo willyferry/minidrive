@@ -36,4 +36,4 @@ Route::middleware('auth')->group(function () {
     Route::put('/account-setting', [AccountSettingController::class, 'update'])->name('account-setting.update');
 });
 
-Auth::routes(['password.reset' => false]);
+Auth::routes(['reset' => false]);
