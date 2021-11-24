@@ -21,6 +21,11 @@
                     <div class="auth-logo">
                         <a href="{{ route('welcome') }}"><img src="{{ asset('/images/logo/logo.png') }}" alt="Logo"></a>
                     </div>
+
+                    <div class="my-2">
+                        @include('layouts.partials.alerts')
+                    </div>
+
                     <h1 class="auth-title">Sign Up</h1>
                     <p class="auth-subtitle mb-5">Input your data to register to our website.</p>
 

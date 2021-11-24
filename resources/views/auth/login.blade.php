@@ -89,13 +89,17 @@
 
 <body>
     <div id="auth">
-
         <div class="row h-100">
             <div class="col-lg-5 col-12">
                 <div id="auth-left">
                     <div class="auth-logo">
                         <a href="{{ route('welcome') }}"><img src="{{ asset('/images/logo/logo.png') }}" alt="Logo"></a>
                     </div>
+
+                    <div class="my-2">
+                        @include('layouts.partials.alerts')
+                    </div>
+
                     <h1 class="auth-title">Log in.</h1>
                     <p class="auth-subtitle mb-5">Log in with your data that you entered during registration.</p>
 
