@@ -35,6 +35,8 @@
         const load = () => {
             @if ($file = Session::get('file'))
                 return window.open("{{ asset('/storage/files/' . $file->file_url) }}", "_blank");
+            @else
+                return false;
             @endif
         }
     </script>
@@ -192,7 +194,7 @@
             if (password) {
                 document.querySelector('#password').value = password;
                 document.querySelector('#confirmPassword').action = url;
-                document.querySelector('form').submit();
+                document.querySelector('#confirmPassword').submit();
             } else {
                 alert('Password is required');
             }
