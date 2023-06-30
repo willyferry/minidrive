@@ -23,7 +23,7 @@ jobs:
         KEY: ${{ secrets.SSHKEY }}
       with:
         source: "."
-        target: "/var/www/mywebsite"
+        target: "/www/wwwroot/minidrive.willyferry.com"
 
     - name: Executing remote command
       uses: appleboy/ssh-action@master
